@@ -32,3 +32,25 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+/*
+ var builder = WebApplication.CreateBuilder(args);
+
+// Omoguæavanje CORS-a
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder => builder.WithOrigins("http://localhost:4200") // Angular radi na portu 4200
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
+var app = builder.Build();
+
+// Koristite CORS
+app.UseCors("AllowAngularApp");
+
+app.MapControllers();
+
+app.Run();
+
+ */
